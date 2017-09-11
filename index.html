@@ -315,7 +315,7 @@
 						</li>
 						<br/>
 						<li style="list-style: none;">
-							Embedded schema metadata:
+							Schema metadata reference:
 							<ul style="font-size: 85%;">
 								<li>Schema id and other metadata are written as a header with the contents</li>
 							</ul>
@@ -328,6 +328,72 @@
 							</ul>
 						</li>
 					</ul>
+				</section>
+				<section data-background-image="img/green.jpg">
+					<h4>Serialization with Embedded Schema</h4>
+					<br/>
+								<pre>
+0000000   <span style="background-color: red;">O   b   j 001 002 026   a   v   r   o   .   s   c   h   e   m</span>
+0000020   <span style="background-color: red;">a 232 022   {   "   t   y   p   e   "   :   "   r   e   c   o</span>
+0000040   <span style="background-color: red;">r   d   "   ,   "   n   a   m   e   "   :   "   T   w   e   e</span>
+0000060   <span style="background-color: red;">t   "   ,   "   n   a   m   e   s   p   a   c   e   "   :   "</span>
+0000100   <span style="background-color: red;">t   w   i   t   t   e   r   "   ,   "   f   i   e   l   d   s</span>
+0000120   <span style="background-color: red;">"   :   [   {   "   n   a   m   e   "   :   "   i   d   "   ,</span>
+0000140   <span style="background-color: red;">"   t   y   p   e   "   :   "   l   o   n   g   "   }   ,   {</span>
+0000160   <span style="background-color: red;">"   n   a   m   e   "   :   "   i   d   _   s   t   r   "   ,</span>
+0000200   <span style="background-color: red;">"   t   y   p   e   "   :   "   s   t   r   i   n   g   "   }</span>
+0000220   <span style="background-color: red;">,   {   "   n   a   m   e   "   :   "   t   e   x   t   "   ,</span>
+0000240   <span style="background-color: red;">"   t   y   p   e   "   :   "   s   t   r   i   n   g   "   }</span>
+0000260   <span style="background-color: red;">,   {   "   n   a   m   e   "   :   "   l   a   n   g   "   ,</span>
+0000300   <span style="background-color: red;">"   t   y   p   e   "   :   "   s   t   r   i   n   g   "   }</span>
+0000320   <span style="background-color: red;">,   {   "   n   a   m   e   "   :   "   f   a   v   o   r   i</span>
+0000340   <span style="background-color: red;">t   e   _   c   o   u   n   t   "   ,   "   t   y   p   e   "</span>
+0000360   <span style="background-color: red;">:   "   l   o   n   g   "   }   ,   {   "   n   a   m   e   "</span>
+0000400   ...
+								</pre>
+				</section>
+				<section data-background-image="img/green.jpg">
+					<h4>Serialization with Hortonworks Schema Reference</h4>
+					<br/>
+								<pre>
+0000000 <span style="background-color: red;">001  \0  \0  \0  \0  \0  \0  \0 001  \0  \0  \0 001 200 200</span>   ?
+0000020   ? 214 204   ? 227 031   $   9   0   7   3   1   2   6   6   7
+0000040   5   8   8   6   8   1   7   2   8   j   R   T       @   B   T
+0000060   S   _   t   w   t   :       T   h   a   n   k       y   o   u
+0000100       ? 230 201   ?   ? 217       h   t   t   p   s   :   /   /
+0000120   t   .   c   o   /   8   g   w   a   z   v   b   U   J   C 004
+0000140   e   n  \0   <   M   o   n       S   e   p       1   1       1
+0000160   8   :   3   9   :   3   1       +   0   0   0   0       2   0
+0000200   1   7 032   1   5   0   5   1   5   5   1   7   1   6   6   4
+0000220 226   ? 225 221  \b 024   1   0   9   1   7   4   6   6   9   9
+0000240 006   P   M   Y 022   A   n   a   t   i   A   m   i   r 002 032
+0000260   M   a   t   o   k   i       P   l   a   n   e   t  \0 002   .
+0000300   D   o   n   t       b   l   a   m   e       m   e   ,   I   '
+0000320   m       w   e   i   r   d   ?   ?  \n   ?  \f   ? 031  \0 001
+0000340   N 214   ?   ?   ? 002 022   3   3   5   1   4   1   6   3   8
+0000360 016   B   T   S   _   t   w   t 036   ?   ?   ?   ? 203 204   ?
+0000400 206 214   ? 205 204   ? 213   ?  \0
+								</pre>
+				</section>
+				<section data-background-image="img/green.jpg">
+					<h4>Serialization with Confluent Schema Reference</h4>
+						<pre>
+0000000  <span style="background: red;">\0  \0  \0  \0   Q</span> 230   ?   ?   ? 201   ?   ? 227 031   $   9
+0000020   0   7   3   1   8   0   9   5   0   1   7   9   9   6   2   8
+0000040   8   v   @   _   _   k   i   l   e   y       @   o   n   l   y
+0000060   s   i   n   w   o   r   l   d       Y   e   a   h       w   t
+0000100   f   ?   ?   ?       T   h   a   t       i   s       s   u   p
+0000120   e   r       w   e   i   r   d       ? 237 230   ? 004   e   n
+0000140  \0   <   M   o   n       S   e   p       1   1       1   9   :
+0000160   0   1   :   0   5       +   0   0   0   0       2   0   1   7
+0000200 032   1   5   0   5   1   5   6   4   6   5   6   6   4   ?   ?
+0000220   ? 211 216   ? 204   ? 023   $   7   0   2   0   0   8   8   6
+0000240   7   3   6   6   9   3   2   4   8   1  \n   c   y   n   d   i
+0000260 030   c   y   n   d   a   q   u   i   l   l   l   l 022   S   a
+0000300   n   d   y   ,       U   T  \0   >   a       y   o   u   n   g
+0000320       m   o   m       l   i   v   i   n   g       i   n       s
+0000340   u   b   u   r   b   i   a   .  \0   ?  \a 204  \a
+					</pre>
 				</section>
         <section data-background-image="img/green.jpg">
             <h4>Convert Record Processor Group</h4>
