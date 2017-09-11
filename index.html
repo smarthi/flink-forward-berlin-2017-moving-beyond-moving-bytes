@@ -45,6 +45,7 @@
         </section>
 				<section data-background-image="img/black.jpg">
           <h3>$WhoAreWe</h3>
+					<br/>
 					<ul style='list-style: none;'>
 						<li>
 		          <h6 style='text-align: left; font-size: 80%;'>Joey Frazee <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @jfrazee</span></h6>
@@ -66,10 +67,10 @@
         </section>
         <section data-background-image="img/black.jpg">
           <h3>Agenda</h3>
+					<br/>
           <ul>
-            <li>Problem Statement</li>
-            <li>What is a Schema Registry ?</li>
-            <li>What are the different Schema Registries ?</li>
+            <li>What is a Schema Registry?</li>
+            <li>What are the different Schema Registries?</li>
             <li>How others are doing it today ?</li>
             <li>Proposed Solution for Flink</li>
             <li>Flink against different Schema Registries</li>
@@ -78,74 +79,85 @@
           </ul>
         </section>
         <section data-background-image="img/blue.jpg">
-          <h3>Problem Statement</h3>
+          <h3>What is a Schema Registry?</h3>
+        </section>
+				<section data-background-image="img/blue.jpg">
+					<ul style='list-style: none;'>
+						<li>A schema registry is:</li>
+						<li>
+							<p>
+								<ul>
+	              	<li>a <u>centralized</u>, <u>versioned</u> schema repository service</li>
+	              	<li>that supports <u>de-centralized</u> schema-based <u>serialization</u> and <u>deserialization</u></li>
+								</ul>
+							</p>
+						</li>
+          </ul>
         </section>
         <section data-background-image="img/blue.jpg">
-          <ul style='font-size: 85%'>
-            <li>Real-time stream processing mandates that you know the semantics of your data</li>
-						<br/>
-            <li>Interesting operations on streaming like
-              <ul>
-                <li>joins, projection, aggregation, filtering, streaming SQL<br/>
-              </ul>
+					<h3>Why should you care?</h3>
+					<br/>
+					<ul style='font-size: 85%; list-style: none;'>
+						<li><u>Because</u>, Real-time stream processing mandates that you know the semantics of your data:</li>
+						<li>
+							<p>
+			          <ul style='font-size: 85%'>
+			            <li>Interesting operations on streaming
+			              <ul>
+			                <li>joins, projection, aggregation, filtering, streaming SQL<br/>
+			              </ul>
+									</li>
+									</li style='list-style: none;'>all require prior knowledge of the types and values of data</li>
+									<br/><br/>
+			            <li>Otherwise, you're just moving bytes and counting anonymous things (you don't need something as powerful as Flink to do that)</li>
+			          </ul>
+							</p>
 						</li>
-						</li style='list-style: none;'>all require prior knowledge of the types and values of data</li>
-						<br/><br/>
-            <li>Otherwise, it’s just moving bytes and counting anonymous things</li>
-          </ul>
         </section>
         <section data-background-image="img/blue.jpg">
           <ul style='font-size: 85%; list-style: none;'>
-            <li>Using embedded schemas is an (unnecessary) overhead for streaming data:</li>
+            <li><u>And</u>, using embedded schemas is an (unnecessary) overhead:</li>
             <li>
-							<ul>
-                <li>The schema can be larger than data</li>
-                <li>And it introduces a copy of the schema for every message or topic</li>
-              </ul>
+							<p>
+								<ul>
+	                <li>The schema can be larger than data</li>
+	                <li>And it introduces a copy of the schema for every message or topic</li>
+	              </ul>
+							</p>
             </li>
-						<br>
-            <li>Including schemas in your project:</li>
+						<br/>
+            <li><u>And</u>, including schemas in your project is bad:</li>
 						<li>
-              <ul>
-                <li>Is not recommended b/c it tightly couples the project to your data</li>
-                <li>Creates practical scalability issues across system and application boundaries</li>
-              </ul>
+							<p>
+	              <ul>
+	                <li>Is not recommended b/c it tightly couples the project to your data</li>
+	                <li>Creates practical scalability issues across system and application boundaries</li>
+	              </ul>
+							</p>
             </li>
           </ul>
         </section>
-        <section data-background-image="img/red.jpg">
-          <h3>What is a Schema Registry?</h3>
-        </section>
-        <section data-background-image="img/red.jpg">
-					<ul>
-						<li style='list-style: none;'>A schema registry is:</li>
-						<li style='list-style: none;'>
-							<ul>
-              	<li>a <u>centralized</u>, <u>versioned</u> schema repository service</li>
-              	<li>that supports <u>de-centralized</u> schema-based <u>serialization</u> and <u>deserialization</u></li>
-							</ul>
-						</li>
-          </ul>
-        </section>
-        <section data-background-image="img/red.jpg">
+        <section data-background-image="img/blue.jpg">
             <ul style='...'>
-                <p style='text-align: left'>In general a schema registry offers or implements:</p>
+                <p style='text-align: left'>In general a schema registry offers or implements a:</p>
                 <ul>
                     <li>Schema database</li>
                     <li>Version control strategy</li>
                     <li>Application API for serialization and deserialization according to the schema</li>
                     <li>API service (e.g., REST) for schema management</li>
                     <li>Way to acquire, include, or pull in binary artifacts (e.g., SerDes) from the service</li>
-                    <li>Wire format that encodes a schema identifier along with contents in serialized objects<</li>
+                    <li>Wire format that encodes a schema <i>identifier</i> along with contents in serialized objects</li>
                 </ul>
 
             </ul>
         </section>
-        <section data-background-image="img/purple.jpg">
+        <section data-background-image="img/red.jpg">
           <h3>What Exists Today</h3>
         </section>
-        <section data-background-image="img/purple.jpg">
-					<ul style='font-size: 85%; list-style: none;'>
+        <section data-background-image="img/red.jpg">
+					<h3>3 Options</h3>
+					<br/>
+					<ul style='font-size: 80%; list-style: none;'>
 						<li>Cask Schema Registry</li>
 						<li style='font-size: 85%;'>
 							<ul>
@@ -163,12 +175,12 @@
 						<li>Hortonworks Registry</li>
 						<li style='font-size: 85%;'>
 							<ul>
-								<li>Shared repository of schemas and SerDes to support Avro schema sharing and record processing in and across applications (e.g., Apache NiFi, Hortonworks Streaming Analytics Manager)</li>
+								<li>Shared repository of schemas and SerDes to support Avro schema sharing, record processing and serialization in and across applications (e.g., Apache NiFi, Hortonworks Streaming Analytics Manager)</li>
 							</ul>
 						</li>
 					</ul>
         </section>
-				<section data-background-image="img/purple.jpg" style="text-align: left;">
+				<section data-background-image="img/red.jpg" style="text-align: left;">
 					<h3 style="text-align: center">Wire Formats</h3>
 					<br>
 					<ul style='font-size: 85%; list-style: none'>
@@ -192,22 +204,22 @@
 						</li>
 					</ul>
         </section>
-				<section data-background-image="img/purple.jpg" style="text-align: left;">
+				<section data-background-image="img/red.jpg" style="text-align: left;">
 					<h3 style="text-align: center">Feature Comparison</h3>
 					<br/>
 					<table>
 						<th>
-							<td style='font-size: 55%;'>REST API</td>
-							<td style='font-size: 55%;'>Schemas</td>
-							<td style='font-size: 55%;'>Custom SerDes</td>
-							<td style='font-size: 55%;'>Storage</td>
-							<td style='font-size: 55%;'>HA</td>
-							<td style='font-size: 55%;'>UI</td>
-							<td style='font-size: 55%;'>Maven Plugin</td>
-							<td style='font-size: 55%;'>Schema Compatibility Checking</td>
-							<td style='font-size: 55%;'>Kafka Integration</td>
+							<td style='font-size: 40%; text-align: center'>REST API</td>
+							<td style='font-size: 40%; text-align: center'>Schemas</td>
+							<td style='font-size: 40%; text-align: center'>Custom SerDes</td>
+							<td style='font-size: 40%; text-align: center'>Storage</td>
+							<td style='font-size: 40%; text-align: center'>HA</td>
+							<td style='font-size: 40%; text-align: center'>UI</td>
+							<td style='font-size: 40%; text-align: center'>Maven Plugin</td>
+							<td style='font-size: 40%; text-align: center'>Schema Compatibility Checking</td>
+							<td style='font-size: 40%; text-align: center'>Kafka Integration</td>
 						</th>
-						<tr style='font-size: 55%;'>
+						<tr style='font-size: 50%;'>
 							<td>Cask</td>
 							<td style="text-align: center">Y</td>
 							<td>Avro, Protobuf</td>
@@ -218,7 +230,7 @@
 							<td></td>
 							<td></td>
 							<td style="text-align: center">?</td>
-						<tr style='font-size: 55%;'>
+						<tr style='font-size: 50%;'>
 							<td>Confluent</td>
 							<td style="text-align: center">Y</td>
 							<td>Avro</td>
@@ -230,7 +242,7 @@
 							<td style="text-align: center">Y</td>
 							<td style="text-align: center">Y</td>
 						</tr>
-						<tr style='font-size: 55%;'>
+						<tr style='font-size: 50%;'>
 							<td>Hortonworks</td>
 							<td style="text-align: center">Y</td>
 							<td>Avro</td>
@@ -244,6 +256,9 @@
 						</tr>
 					</table>
 				</section>
+				<section data-background-image="img/purple.jpg">
+          <h3>PURPLE SECTION</h3>
+        </section>
         <section data-background-image="img/green.jpg">
           <h3>GREEN SECTION</h3>
         </section>
