@@ -73,8 +73,9 @@
             <li>Why should you Care?</li>
             <li>What Exists Today?</li>
             <li>Different Wire Formats</li>
+						<li>Using a Schema Registry</li>
             <li>Using a Schema Registry across a Data pipeline</li>
-            <li>Integration with Flink</li>
+            <li>Implementation with Flink Deserialization Schemas</li>
             <li>Demo</li>
           </ul>
         </section>
@@ -302,33 +303,59 @@
             <img src='img/screenshots/NiFi%2001%20Twitter%20Feed%20Example%20Data%20Flow.png' style='max-width: 80%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
+				<section data-background-image="img/green.jpg">
+					<h3>Schema Access Strategies</h3>
+					<br/>
+					<ul style="font-size: 85%;">
+						<li style="list-style: none;">
+							Embedded schema:
+							<ul style="font-size: 85%;">
+								<li>Whole schema is written out with the message contents (in Avro this corresponds to DataFileReader/Writer)</li>
+							</ul>
+						</li>
+						<br/>
+						<li style="list-style: none;">
+							Embedded schema metadata:
+							<ul style="font-size: 85%;">
+								<li>Schema id and other metadata are written as a header with the contents</li>
+							</ul>
+						</li>
+						<br/>
+						<li style="list-style: none;">
+							Implicit schema:
+							<ul style="font-size: 85%;">
+								<li>No schema is presented and application must know what it's expecting or iterate through the universe of possibilities</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
         <section data-background-image="img/green.jpg">
             <h4>Convert Record Processor Group</h4>
             <img src='img/screenshots/NiFi%2002%20ConvertRecord%20Processor%20Group%20Subflow.png' style='max-width: 40%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
         <section data-background-image="img/green.jpg">
-            <h4>Convert Record Properties</h4>
+            <h4>ConvertRecord Properties</h4>
             <img src='img/screenshots/NiFi%2003%20ConvertRecord%20Properties.png' style='max-width: 80%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
         <section data-background-image="img/green.jpg">
-            <h5>NiFi AvroRecordSetter Properties without Schema Registry</h5>
-            <img src='img/screenshots/NiFi%2004%20AvroRecordSetWriter%20Properties%20without%20Schema%20Registry.png' style='max-width: 80%; border: none;
+            <h5>AvroRecordSetWriter Properties without Schema Registry</h5>
+            <img src='img/screenshots/NiFi%2004%20AvroRecordSetWriter%20Properties%20without%20Schema%20Registry.png' style='max-width: 70%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
         <section data-background-image="img/green.jpg">
-            <h4>NiFi AvroRecordSetter Properties with Schema Registry</h4>
-            <img src='img/screenshots/NiFi%2005%20AvroRecordSetWriter%20Properties%20with%20Schema%20Registry.png' style='max-width: 50%; border: none;
+            <h4>AvroRecordSetWriter Properties with Schema Registry</h4>
+            <img src='img/screenshots/NiFi%2005%20AvroRecordSetWriter%20Properties%20with%20Schema%20Registry.png' style='max-width: 70%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
         <section data-background-image="img/green.jpg">
-            <h4>NiFi PublishKafkaRecord Properties</h4>
+            <h4>PublishKafkaRecord Properties</h4>
             <img src='img/screenshots/NiFi%2006%20PublishKafkaRecord%20Properties%20with%20Schema%20Registry.png' style='max-width: 80%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
 				<section data-background-image="img/yellow.jpg">
-					<h3>Implementation</h3>
+					<h3>Implementation with Flink Deserialization Schemas</h3>
 				</section>
 				<section data-background-image="img/yellow.jpg">
 					<h5>Hortonworks Deserialization Schema</h5>
