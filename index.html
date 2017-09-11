@@ -169,7 +169,7 @@
 					</ul>
         </section>
 				<section data-background-image="img/purple.jpg" style="text-align: left;">
-					<h3 style="text-align: center">Wire Format</h3>
+					<h3 style="text-align: center">Wire Formats</h3>
 					<br>
 					<ul style='font-size: 85%; list-style: none'>
 						<li>Cask (N/A?)</li>
@@ -192,6 +192,58 @@
 						</li>
 					</ul>
         </section>
+				<section data-background-image="img/purple.jpg" style="text-align: left;">
+					<h3 style="text-align: center">Feature Comparison</h3>
+					<br/>
+					<table>
+						<th>
+							<td style='font-size: 55%;'>REST API</td>
+							<td style='font-size: 55%;'>Schemas</td>
+							<td style='font-size: 55%;'>Custom SerDes</td>
+							<td style='font-size: 55%;'>Storage</td>
+							<td style='font-size: 55%;'>HA</td>
+							<td style='font-size: 55%;'>UI</td>
+							<td style='font-size: 55%;'>Maven Plugin</td>
+							<td style='font-size: 55%;'>Schema Compatibility Checking</td>
+							<td style='font-size: 55%;'>Kafka Integration</td>
+						</th>
+						<tr style='font-size: 55%;'>
+							<td>Cask</td>
+							<td style="text-align: center">Y</td>
+							<td>Avro, Protobuf</td>
+							<td></td>
+							<td>Cask CDAP DataSet</td>
+							<td style="text-align: center">?</td>
+							<td style="text-align: center">Y</td>
+							<td></td>
+							<td></td>
+							<td style="text-align: center">?</td>
+						<tr style='font-size: 55%;'>
+							<td>Confluent</td>
+							<td style="text-align: center">Y</td>
+							<td>Avro</td>
+							<td></td>
+							<td>Kafka Topic</td>
+							<td>master/slave</td>
+							<td></td>
+							<td style="text-align: center">Y</td>
+							<td style="text-align: center">Y</td>
+							<td style="text-align: center">Y</td>
+						</tr>
+						<tr style='font-size: 55%;'>
+							<td>Hortonworks</td>
+							<td style="text-align: center">Y</td>
+							<td>Avro</td>
+							<td style="text-align: center">Y</td>
+							<td>JDBC, HDFS</td>
+							<td>storage + load balancer/proxy</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td style="text-align: center">Y</td>
+						</tr>
+					</table>
+				</section>
         <section data-background-image="img/green.jpg">
           <h3>GREEN SECTION</h3>
         </section>
