@@ -45,19 +45,24 @@
         </section>
 				<section data-background-image="img/black.jpg">
           <h3>$WhoAreWe</h3>
-          <h6 style='text-align: left; font-size: 80%;'>Joey Frazee <br/><span style="..."><i class="fa fa-twitter" aria-hidden="true"></i> @jfrazee</span></h6>
-          <ul style='...'>
-            <li>Product Solutions Architect, Hortonworks</li>
-            <li>Committer on Apache NiFi, and PMC on Apache Streams</li>
-          </ul>
-          <br/>
-          <br/>
-          <h6 style='text-align: left; font-size: 80%;'>Suneel Marthi <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @suneelmarthi</span></h6>
-          <ul style='font-size: 70%;'>
-            <li>Principal Software Engineer, Office of Technology, Red Hat</li>
-            <li>Member of Apache Software Foundation</li>
-            <li>Committer and PMC on Apache Mahout, Apache OpenNLP, Apache Streams</li>
-          </ul>
+					<ul style='list-style: none;'>
+						<li>
+		          <h6 style='text-align: left; font-size: 80%;'>Joey Frazee <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @jfrazee</span></h6>
+		          <ul style='font-size: 70%;'>
+		            <li>Product Solutions Architect, Hortonworks</li>
+		            <li>Committer on Apache NiFi, and PMC on Apache Streams</li>
+		          </ul>
+						</li>
+		        <br/>
+		        <li>
+		          <h6 style='text-align: left; font-size: 80%;'>Suneel Marthi <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @suneelmarthi</span></h6>
+		          <ul style='font-size: 70%;'>
+		            <li>Principal Software Engineer, Office of Technology, Red Hat</li>
+		            <li>Member of Apache Software Foundation</li>
+		            <li>Committer and PMC on Apache Mahout, Apache OpenNLP, Apache Streams</li>
+		          </ul>
+						</li>
+					</ul>
         </section>
         <section data-background-image="img/black.jpg">
           <h3>Agenda</h3>
@@ -77,87 +82,115 @@
         </section>
         <section data-background-image="img/blue.jpg">
           <ul style='font-size: 85%'>
-            <li>Realtime stream processing mandates that you know the semantics of your data</li>
-            <li>Interesting operations on streaming like -
+            <li>Real-time stream processing mandates that you know the semantics of your data</li>
+						<br/>
+            <li>Interesting operations on streaming like
               <ul>
-                <li>join, projection, aggregation, filtering, streaming SQL<br/>
-                    - all require prior knowledge of the types and values of data</li>
+                <li>joins, projection, aggregation, filtering, streaming SQL<br/>
               </ul>
-            </li>
+						</li>
+						</li style='list-style: none;'>all require prior knowledge of the types and values of data</li>
+						<br/><br/>
             <li>Otherwise, it’s just moving bytes and counting anonymous things</li>
           </ul>
         </section>
         <section data-background-image="img/blue.jpg">
-          <ul style='font-size: 85%'>
-            <li>Using Embedded Schemas is an overhead for streaming data
-              <ul>
-                <li>Schema could be larger than data</li>
-                <li>Copy schema per message or topic</li>
+          <ul style='font-size: 85%; list-style: none;'>
+            <li>Using embedded schemas is an (unnecessary) overhead for streaming data:</li>
+            <li>
+							<ul>
+                <li>The schema can be larger than data</li>
+                <li>And it introduces a copy of the schema for every message or topic</li>
               </ul>
             </li>
-            <li>Include Schemas in your project
+						<br>
+            <li>Including schemas in your project:</li>
+						<li>
               <ul>
-                <li>Not recommended</li>
-                <li>Scalability issues across system and application boundaries</li>
+                <li>Is not recommended b/c it tightly couples the project to your data</li>
+                <li>Creates practical scalability issues across system and application boundaries</li>
               </ul>
             </li>
           </ul>
         </section>
         <section data-background-image="img/red.jpg">
-          <h3>What is a Schema Registry ?</h3>
-          
+          <h3>What is a Schema Registry?</h3>
         </section>
         <section data-background-image="img/red.jpg">
-            <ul style='...'>
-                <li>A schema registry is
-                    <ul>
-                        <li><u>centralized</u>, <u>versioned</u> schema repository service</li>
-                        <li>supports <u>de-centralized</u> schema-based <u>serialization</u> and <u>deserialization</u></li>
-                    </ul>
-            </ul>
+					<ul>
+						<li style='list-style: none;'>A schema registry is:</li>
+						<li style='list-style: none;'>
+							<ul>
+              	<li>a <u>centralized</u>, <u>versioned</u> schema repository service</li>
+              	<li>that supports <u>de-centralized</u> schema-based <u>serialization</u> and <u>deserialization</u></li>
+							</ul>
+						</li>
+          </ul>
         </section>
         <section data-background-image="img/red.jpg">
             <ul style='...'>
                 <p style='text-align: left'>In general a schema registry offers or implements:</p>
-                    <ul>
-                        <li>Schema database</li>
-                        <li>Version control strategy</li>
-                        <li>Application API for serialization and deserialization according to the schema</li>
-                        <li>API service (e.g., REST) for schema management</li>
-                        <li>Way to acquire, include, or pull in binary artifacts (e.g., SerDes) from the service</li>
-                        <li>Wire format that encodes a schema identifier along with contents in serialized objects<</li>
-                    </ul>
+                <ul>
+                    <li>Schema database</li>
+                    <li>Version control strategy</li>
+                    <li>Application API for serialization and deserialization according to the schema</li>
+                    <li>API service (e.g., REST) for schema management</li>
+                    <li>Way to acquire, include, or pull in binary artifacts (e.g., SerDes) from the service</li>
+                    <li>Wire format that encodes a schema identifier along with contents in serialized objects<</li>
+                </ul>
 
             </ul>
         </section>
-        <section data-background-image="img/red.jpg">
-            <h3>Motivations (summary)</h3>
-            <ul style='...'>
-                <p style="...">Possibility of :</p>
-                        <ul>
-                            <li>Efficiency: Don't have to include schema with every message</li>
-                            <li>Governance: Provides versioning and schema management tooling</li>
-                        </ul>
-            </ul>
+        <section data-background-image="img/purple.jpg">
+          <h3>What Exists Today</h3>
         </section>
         <section data-background-image="img/purple.jpg">
-          <h3>Schema Registry Matrix</h3>
+					<ul style='font-size: 85%; list-style: none;'>
+						<li>Cask Schema Registry</li>
+						<li style='font-size: 85%;'>
+							<ul>
+								<li>A schema serving layer for Avro and Protobuf to support data preperation and validation in Cask CDAP Wrangler</li>
+							</ul>
+						</li>
+						<br/>
+						<li>Confluent Schema Registry</li>
+						<li style='font-size: 85%;'>
+							<ul>
+								<li>An interface for storing and retrieving Avro schemas for efficient serialization in Kafka and interop with Kafka Streams</li>
+							</ul>
+						</li>
+						<br/>
+						<li>Hortonworks Registry</li>
+						<li style='font-size: 85%;'>
+							<ul>
+								<li>Shared repository of schemas and SerDes to support Avro schema sharing and record processing in and across applications (e.g., Apache NiFi, Hortonworks Streaming Analytics Manager)</li>
+							</ul>
+						</li>
+					</ul>
         </section>
-        <section data-background-image="img/purple.jpg">
-            <table style='font-size: 80%;'>
-                <th>
-                    <td></td>
-                </th>
-                <tr>
-                    <td>Berlin</td><td>ist</td><td>ein</td><td>herausragendes</td><td>Kunst- und Kulturzentrum</td><td>.</td>
-                </tr>
-                <tr>
-                    <td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td>
-                </tr>
-                <tr>
-                    <td>Berlin</td><td>is</td><td>an</td><td>outstanding</td><td>Art and cultural center</td><td>.</td>
-                </tr>
-            </table>
+				<section data-background-image="img/purple.jpg" style="text-align: left;">
+					<h3 style="text-align: center">Wire Format</h3>
+					<br>
+					<ul style='font-size: 85%; list-style: none'>
+						<li>Cask (N/A?)</li>
+						<br/>
+						<li>Confluent (13 byte header)</li>
+						<li style='font-size: 85%;'>
+							<ul>
+								<li>Magic byte/protocol version (byte): 0</li>
+								<li>Schema id (int): 1-4</li>
+							</ul>
+						</li>
+						<br/>
+						<li>Hortonworks</li>
+						<li style='font-size: 85%;'>
+							<ul>
+								<li>Magic byte/protocol version (byte): 0</li>
+								<li>Schema id (long): 1-8</li>
+								<li>Schema version (int): 9-12</li>
+							</ul>
+						</li>
+					</ul>
         </section>
         <section data-background-image="img/green.jpg">
           <h3>GREEN SECTION</h3>
