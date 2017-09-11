@@ -256,8 +256,8 @@
 						</tr>
 					</table>
 				</section>
-        <section data-background-image="img/green.jpg">
-          <h3>Using a Schema Registry across a Data pipeline</h3>
+				<section data-background-image="img/green.jpg">
+          <h3>Using a Schema Registry</h3>
         </section>
         <section data-background-image="img/green.jpg">
           <h3>Add a New Schema</h3>
@@ -271,13 +271,30 @@
         </section>
         <section data-background-image="img/green.jpg">
             <h3>Edit Schema</h3>
-            <img src='img/screenshots/SR%2003%20Edit%20a%20Schema.png' style='max-width: 50%; border: none;
+            <img src='img/screenshots/SR%2003%20Edit%20a%20Schema.png' style='max-width: 45%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
         <section data-background-image="img/green.jpg">
             <h3>Schema Version</h3>
             <img src='img/screenshots/SR%2004%20Schema%20Versions.png' style='max-width: 80%; border: none;
             box-shadow: none; background: none; float: center;' />
+        </section>
+				<section data-background-image="img/green.jpg">
+          <h3>Using a Schema Registry across a Data pipeline</h3>
+        </section>
+				<section data-background-image="img/green.jpg">
+          <h3>Example Data Pipeline</h3>
+					<img src='img/screenshots/SR%2001%20Pipeline%20Example.png' style='max-width: 80%; border: none;
+					box-shadow: none; background: none; float: center;' />
+					<ol style="font-size: 50%;">
+						<li>Request schema from schema registry service via schema id</li>
+						<li>Receive the associated schema</li>
+						<li>Serialize the message contents according to the schema, packed with the encoded schema metadata, and publish to Kafka</li>
+						<li>Consume from Kafka and decode the message into its schema metadata and contents</li>
+						<li>Request the schema from schema registry service via schema id</li>
+						<li>Receive the associated schema</li>
+						<li>Deserialize the contents according to the schema and do cool stuff</li>
+					</ol>
         </section>
         <section data-background-image="img/green.jpg">
             <h4>Apache NiFi Twitter Feed Example</h4>
@@ -286,7 +303,7 @@
         </section>
         <section data-background-image="img/green.jpg">
             <h4>Convert Record Processor Group</h4>
-            <img src='img/screenshots/NiFi%2001%20Twitter%20Feed%20Example%20Data%20Flow.png' style='max-width: 80%; border: none;
+            <img src='img/screenshots/NiFi%2002%20ConvertRecord%20Processor%20Group%20Subflow.png' style='max-width: 40%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
         <section data-background-image="img/green.jpg">
@@ -309,6 +326,45 @@
             <img src='img/screenshots/NiFi%2006%20PublishKafkaRecord%20Properties%20with%20Schema%20Registry.png' style='max-width: 80%; border: none;
             box-shadow: none; background: none; float: center;' />
         </section>
+				<section data-background-image="img/yellow.jpg">
+					<h3>Implementation</h3>
+				</section>
+				<section data-background-image="img/yellow.jpg">
+					<h5>Hortonworks Deserialization Schema</h5>
+					<table style="border: 0px; border-collapse: collapse;">
+						<tr style="border: 0px; border-collapse: collapse;">
+							<td colspan=2  style="border: 0px; border-collapse: collapse;">
+								<img src="img/screenshots/00%20Code%20Example%20HWX%20SR.png" style="max-width: 95%; border: none; box-shadow: none; background: none; float: left"/>
+							</td>
+						</tr>
+						<tr style="border: 0px; border-collapse: collapse;">
+							<td style="vertical-align: top; border: 0px; border-collapse: collapse;">
+								<img src="img/screenshots/01%20Code%20Example%20HWX%20SR.png" style="max-width: 90%; border: none; box-shadow: none; background: none; float: left"/>
+							</td>
+							<td style="vertical-align: top; border: 0px; border-collapse: collapse;">
+								<img src="img/screenshots/02%20Code%20Example%20HWX%20SR.png" style="max-width: 90%; border: none; box-shadow: none; background: none; float: left"/>
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section data-background-image="img/yellow.jpg">
+					<h5>Confluent Deserialization Schema</h5>
+					<table style="border: 0px; border-collapse: collapse;">
+						<tr style="border: 0px; border-collapse: collapse;">
+							<td colspan=2  style="border: 0px; border-collapse: collapse;">
+								<img src="img/screenshots/00%20Code%20Example%20Confluent%20SR.png" style="max-width: 100%; border: none; box-shadow: none; background: none; float: left"/>
+							</td>
+						</tr>
+						<tr style="border: 0px; border-collapse: collapse;">
+							<td style="vertical-align: top; border: 0px; border-collapse: collapse;">
+								<img src="img/screenshots/01%20Code%20Example%20Confluent%20SR.png" style="max-width: 100%; border: none; box-shadow: none; background: none; float: left"/>
+							</td>
+							<td style="vertical-align: top; border: 0px; border-collapse: collapse;">
+								<img src="img/screenshots/02%20Code%20Example%20Confluent%20SR.png" style="max-width: 100%; border: none; box-shadow: none; background: none; float: left"/>
+							</td>
+						</tr>
+					</table>
+				</section>
         <section data-background-image="img/blue.jpg">
             <h3>Credits</h3>
             <br/>
