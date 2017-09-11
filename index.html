@@ -188,7 +188,7 @@
 					<ul style='font-size: 85%; list-style: none'>
 						<li>Cask (N/A?)</li>
 						<br/>
-						<li>Confluent (13 byte header)</li>
+						<li>Confluent (5 byte header)</li>
 						<li style='font-size: 85%;'>
 							<ul>
 								<li>Magic byte/protocol version (byte): 0</li>
@@ -196,7 +196,7 @@
 							</ul>
 						</li>
 						<br/>
-						<li>Hortonworks</li>
+						<li>Hortonworks (13 byte header)</li>
 						<li style='font-size: 85%;'>
 							<ul>
 								<li>Magic byte/protocol version (byte): 0</li>
@@ -377,7 +377,8 @@
 				</section>
 				<section data-background-image="img/green.jpg">
 					<h4>Serialization with Confluent Schema Reference</h4>
-						<pre>
+					<br/>
+					<pre>
 0000000  <span style="background: red;">\0  \0  \0  \0   Q</span> 230   ?   ?   ? 201   ?   ? 227 031   $   9
 0000020   0   7   3   1   8   0   9   5   0   1   7   9   9   6   2   8
 0000040   8   v   @   _   _   k   i   l   e   y       @   o   n   l   y
