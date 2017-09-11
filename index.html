@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Moving Beyond Moving Bytes</title>
+
+    <meta name="description" content="Moving Beyond Moving Bytes">
+    <meta name="author" content="Joey Frazee; Suneel Marthi">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/bbuzz17.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+    <!--[if lt IE 9]> <script src="lib/js/html5shiv.js"></script> <![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="img/space.jpg">
+          <br/>
+          <br/>
+          <br/>
+          <h3>Moving Beyond Moving Bytes</h3>
+          <br/>
+          <p>Joey Frazee<br/>
+             Suneel Marthi
+          </p>
+          <p style="font-size: 60%">September 12, 2017<br/>
+             Flink Forward, Berlin, Germany</p>
+        </section>
+				<section data-background-image="img/black.jpg">
+          <h3>$WhoAreWe</h3>
+          <h6 style='text-align: left; font-size: 80%;'>Joey Frazee <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @&hellip;</span></h6>
+          <ul style='font-size: 70%;'>
+            <li>&hellip;</li>
+            <li>&hellip;</li>
+            <li>&hellip;</li>
+            <li>&hellip;</li>
+          </ul>
+          <br/>
+          <br/>
+          <h6 style='text-align: left; font-size: 80%;'>Suneel Marthi <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @suneelmarthi</span></h6>
+          <ul style='font-size: 70%;'>
+            <li>Principal Software Engineer, Office of Technology, Red Hat</li>
+            <li>Member of Apache Software Foundation</li>
+            <li>Committer and PMC on Apache Mahout, Apache OpenNLP, Apache Streams</li>
+          </ul>
+        </section>
+        <section data-background-image="img/black.jpg">
+          <h3>Agenda</h3>
+          <ul>
+            <li>Problem Statement</li>
+            <li>What is a Schema Registry ?</li>
+            <li>What are the different Schema Registries ?</li>
+            <li>How others are doing it today ?</li>
+            <li>Proposed Solution for Flink</li>
+            <li>Flink against different Schema Registries</li>
+            <li>Demo</li>
+            <li>Next Steps&hellip;</li>
+          </ul>
+        </section>
+        <section data-background-image="img/blue.jpg">
+          <h3>Problem Statement</h3>
+        </section>
+        <section data-background-image="img/blue.jpg">
+          <ul style='font-size: 85%'>
+            <li>Realtime stream processing mandates that you know the semantics of your data</li>
+            <li>Interesting operations on streaming like -
+              <ul>
+                <li>join, projection, aggregation, filtering, streaming SQL<br/>
+                    - all require prior knowledge of the types and values of data</li>
+              </ul>
+            </li>
+            <li>Otherwise, it’s just moving bytes and counting anonymous things</li>
+          </ul>
+        </section>
+        <section data-background-image="img/blue.jpg">
+          <ul style='font-size: 85%'>
+            <li>Using Embedded Schemas is an overhead for streaming data
+              <ul>
+                <li>Schema could be larger than data</li>
+                <li>Copy schema per message or topic</li>
+              </ul>
+            </li>
+            <li>Include Schemas in your project
+              <ul>
+                <li>Not recommended</li>
+                <li>Scalability issues across system and application boundaries</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-background-image="img/red.jpg">
+          <h3>What is a Schema Registry ?</h3>
+          
+        </section>
+        <section data-background-image="img/red.jpg">
+
+        </section>
+        <section data-background-image="img/purple.jpg">
+          <h3>PURPLE SECTION (previous sections were black, blue, and red...)</h3>
+          <p>Look at the img/ folder. Choose a background colour based on the file name. Change in the &lt;section&gt; tag...</p>
+        </section>
+        <section data-background-image="img/purple.jpg">
+
+        </section>
+        <section data-background-image="img/green.jpg">
+          <h3>GREEN SECTION</h3>
+        </section>
+        <section data-background-image="img/green.jpg">
+
+        </section>
+        <section data-background-image="img/yellow.jpg">
+          <h3>YELLOW SECTION</h3>
+          <p>These are all the colours you can choose. Black, Blue, Green, Purple, Red, Yellow. And an image from space.</p>
+        </section>
+        <section data-background-image="img/yellow.jpg">
+
+        </section>
+        <section data-background-image="img/black.jpg">
+          <h1>H1</h1>
+          <h2>H2</h2>
+          <h3>H3</h3>
+          <h4>H4</h4>
+          <h5>H5</h5>
+        </section>
+        <section data-background-image="img/black.jpg">
+          <ul>
+            <li>Lists</li>
+            <li>Lists</li>
+            <li>Sublists
+              <ul>
+                <li>Sublists</li>
+              </ul>
+            </li>
+          </ul>
+          <br/><!-- break lines... -->
+          <br/>
+          <br/>
+          <ul style='font-size: 50%'>
+            <li>Lists with 50% font-size</li>
+            <li>Lists with 50% font-size</li>
+          </ul>
+        </section>
+        <section data-background-image="img/black.jpg">
+          <h3>Images</h3>
+          <img src='img/space.jpg' style='max-width: 75%; border: none; background: none;box-shadow: none; '/>
+        </section>
+        <section data-background-image="img/black.jpg">
+          <p>Normal text, centre aligned</p>
+          <p style='text-align: left'>Left aligned text</p>
+          <p style='text-align: right'>Right aligned text</p>
+          <p>Code! <code>Code!</code></p>
+          <pre><code data-trim data-noescape>E = string in the target language (English)
+
+F = string in the source language (Spanish)
+
+e~ = argmax  p(e/f) = argmax p(f/e) * p(e)
+
+e~ = best translation, the one with highest probability</code></pre>
+        </section>
+        <section data-background-image="img/black.jpg">
+          <h3>Table</h3>
+          <table>
+            <tr>
+              <td>Das</td><td>ist</td><td>ein</td><td colspan='3' style='text-align: center;'>Hochhaus&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+              <td>This</td><td>is</td><td>a</td><td>high&nbsp;&nbsp;&nbsp;</td><td>rise</td><td>building</td>
+            </tr>
+          </table>
+        </section>
+        <section data-background-image="img/black.jpg">
+          <h2>Questions ???</h2>
+        </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        keyboard: true,
+        touch: true,
+        loop: false,
+        fragments: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
